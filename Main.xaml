@@ -161,7 +161,7 @@
               <OutArgument x:TypeArguments="x:String">[consumerKey]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">5QRQy12HfDzyye5qXUASGhULg</InArgument>
+              <InArgument x:TypeArguments="x:String">CzYwPQQ6sWZY62DC0Pprz6ZcX</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -169,7 +169,7 @@
               <OutArgument x:TypeArguments="x:String">[consumerSecret]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">uIB7JcI3h4UnmJ831KrYugLLNgG770npiOnvOqwjbbpRZzeebt</InArgument>
+              <InArgument x:TypeArguments="x:String">f5MgC5Ab78pTQvcgMKqIUUNppUkR2ypZ8TSOvcDVoeqfHIDk2i</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
