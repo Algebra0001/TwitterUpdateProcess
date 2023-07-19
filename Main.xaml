@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>797.6,985.5999999999999</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,835.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,9 +113,14 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="485.6,920.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="485.6,770.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="JsonString" />
       <Variable x:TypeArguments="x:Object" Name="JsonObject" />
@@ -223,48 +228,66 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ToGetMediaId.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="423.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ToGetMediaId.xaml">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="423.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ToGetMediaId.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ToGetMediaId.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_MediaId">[currentMediaId]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Autorization">[autorization.Replace("$", "")]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerKey">[consumerKey]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerSecret">[consumerSecret]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[accessToken]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AccessSecret">[accessSecret]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ApiUrl">[mediaApi]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">[mediaPath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PostMediaId.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="423.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PostMediaId.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_MediaId">[currentMediaId]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Autorization">[autorization.Replace("$", "")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ApiUrl">[mediaIdApi]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Authorization">[autorization.Replace("$", "")]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerKey">[consumerKey]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerSecret">[consumerSecret]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">[accessToken]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_AccessSecret">[accessSecret]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ApiUrl">[mediaApi]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MediaPath">[mediaPath]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PostMediaId.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="423.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PostMediaId.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ApiUrl">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mediaIdApi" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Authorization">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="autorization.Replace(&quot;$&quot;, &quot;&quot;)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerKey">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="consumerKey" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ConsumerSecret">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="consumerSecret" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AccessToken">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="accessToken" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AccessSecret">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="accessSecret" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="statusCode" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Response">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="response" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode">[statusCode]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Response">[response]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Text" />
         <InArgument x:TypeArguments="x:String" x:Key="in_MediaID" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="423.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[statusCode.ToString + &quot; - &quot; + response]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="423.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,254.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[statusCode.ToString + &quot; - &quot; + response]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
